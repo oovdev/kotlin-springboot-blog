@@ -8,6 +8,9 @@ server:
       enabled: true
 
 spring:
+  output:
+    ansi:
+      enabled: always
   datasource:
     url: jdbc:mariadb://${DATABASE_IP}:${DATABASE_PORT}/${DATABASE_NAME}?serverTimezone=Asia/Seoul&useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf8
     username: ${DATABASE_USERNAME}
@@ -23,4 +26,9 @@ spring:
         default_batch_fetch_size: 1000
         globally_quoted_identifiers: true
     show-sql: true
+
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true
 
